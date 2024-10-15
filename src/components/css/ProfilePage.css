@@ -1,0 +1,174 @@
+/* Full-page container to center content */
+.profile-page-container {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: #f9f9f9;
+    padding: 20px;
+}
+
+/* Profile card design */
+.profile-card {
+    background-color: #fff;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    max-width: 800px;
+    width: 100%;
+    text-align: center;
+    margin: auto;
+}
+
+/* Centering the welcome and title text */
+.title-container {
+    margin-bottom: 20px;
+}
+
+.welcome-section-title {
+    font-size: 1.5rem;
+    margin: 0;
+}
+
+.profile-title {
+    font-size: 2.5rem;
+    margin: 5px 0;
+}
+
+/* User profile name and information */
+.user-profile-name {
+    margin-top: 15px;
+    font-size: 2rem;
+}
+
+.user-info {
+    margin-top: 10px;
+}
+
+.user-email, .user-date-joined {
+    font-size: 1.1rem;
+    margin: 5px 0;
+}
+
+/* Loading container */
+.loading-container {
+    text-align: center;
+    font-size: 1.5rem;
+    color: #666;
+    margin-top: 20px;
+}
+
+/* Primary button styling */
+.primary-button {
+    background-color: #ffc107;
+    border: none;
+    color: white;
+    font-size: 1.2rem;
+    width: 30%;
+    margin-top: 20px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.primary-button:hover {
+    background-color: #e0a800;
+}
+
+/* Footer placement */
+footer {
+    margin-top: auto;
+    width: 100%;
+}
+
+/* Plan card styling */
+.plan-card {
+    border: 1px solid #ddd;
+    padding: 20px;
+    width: 250px;
+    text-align: center;
+    cursor: pointer;
+    transition: transform 0.3s, background-color 0.3s;
+}
+
+.active-plan {
+    background-color: #ffc107;
+    color: white;
+    transform: scale(1.05);
+}
+
+/* Voucher styling */
+.voucher-input {
+    padding: 10px;
+    width: 300px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+}
+
+.apply-btn {
+    background-color: #e0a800;
+    border: none;
+    padding: 10px 20px;
+    margin-left: 10px;
+    color: white;
+    cursor: pointer;
+}
+
+.apply-btn:hover {
+    background-color: #d39e00;
+}
+
+.voucher-error {
+    color: red;
+}
+
+.voucher-success {
+    color: green;
+}
+
+/* Payment methods icons */
+.methods-icons img {
+    width: 50px;
+    height: 50px;
+}
+
+/* Pay button styling */
+.pay-btn {
+    background-color: #ffc107;
+    border: none;
+    padding: 15px 30px;
+    color: white;
+    font-size: 1.25rem;
+}
+
+.pay-btn:hover {
+    background-color: #e0a800;
+}
+
+/* Custom containers */
+.payment-container {
+    max-width: 900px;
+    margin: auto;
+    padding: 0;
+}
+
+.custom-container {
+    width: 85%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+.container-xxl.custom-container {
+    width: 150% !important;
+    padding: 10px 0 !important;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .custom-container {
+        width: 95%;
+        padding: 15px;
+    }
+}

@@ -1,0 +1,119 @@
+/* Payment Container */
+.payment-page-container {
+  max-width: 1250px;
+  margin: auto;
+  padding: 0; /* Optional to reset padding */
+}
+
+/* Adjusted Custom Content Wrapper */
+.payment-content-wrapper {
+  width: 85%; /* Controls the width */
+  max-width: 1200px; /* Maximum limit */
+  margin: 0 auto; /* Center it */
+  padding: 20px; /* Adjust padding */
+  box-sizing: border-box; /* Ensure padding doesn't exceed width */
+}
+
+/* Handle Bootstrap's Container Conflict */
+.container-xxl.payment-content-wrapper {
+  width: 100% !important; /* Force width */
+  padding: 10px 0 !important;
+}
+
+/* Responsive Design for Smaller Screens */
+@media (max-width: 768px) {
+  .payment-content-wrapper {
+      width: 95%; /* Adjust for smaller screens */
+      padding: 15px;
+  }
+}
+
+/* Other Styles Remain Unchanged */
+.payment-header {
+  background-color: #ffc107;
+  color: white;
+}
+
+.payment-title {
+  font-family: 'Roboto', sans-serif;
+  font-size: 2.5rem;
+  margin-bottom: 0.5rem;
+}
+
+.payment-subtitle {
+  font-size: 1.25rem;
+}
+
+.payment-plan-card {
+  border: 1px solid #ddd;
+  padding: 20px;
+  width: 250px;
+  text-align: center;
+  cursor: pointer;
+  transition: transform 0.3s, background-color 0.3s;
+}
+
+.payment-plan-card.active-plan {
+  background-color: #ffc107;
+  color: white;
+  transform: scale(1.05);
+}
+
+.voucher-section {
+  margin-top: 2rem;
+}
+
+.voucher-input-field {
+  padding: 10px;
+  width: 300px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+}
+
+.apply-voucher-btn {
+  background-color: #e0a800;
+  border: none;
+  padding: 10px 20px;
+  margin-left: 10px;
+  color: white;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.apply-voucher-btn:hover {
+  background-color: #d39e00;
+}
+
+.voucher-error-message {
+  color: red;
+  margin-top: 10px;
+}
+
+.voucher-success-message {
+  color: green;
+  margin-top: 10px;
+}
+
+.payment-methods-header h3 {
+  margin-top: 2rem;
+  margin-bottom: 1rem;
+}
+
+.payment-method-icons img {
+  width: 50px;
+  height: 50px;
+}
+
+.payment-submit-btn {
+  background-color: #ffc107;
+  border: none;
+  padding: 15px 30px;
+  color: white;
+  font-size: 1.25rem;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.payment-submit-btn:hover {
+  background-color: #e0a800;
+}

@@ -1,0 +1,66 @@
+.new-section-title {
+    font-size: 1.25rem;
+    text-transform: uppercase;
+}
+
+.new-text-primary {
+    color: #ffc107 !important;
+}
+
+.new-title {
+    margin-bottom: 3rem;
+}
+
+.ff-secondary {
+    font-family: 'Roboto', sans-serif;
+}
+
+.new-input {
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    padding: 10px;
+    width: 100%;
+}
+
+.new-btn,
+.new-btn-guest {
+    background-color: #ffc107;
+    border: none;
+    border-radius: 4px;
+    padding: 10px 20px;
+    color: #fff;
+    transition: background-color 0.3s;
+    margin-top: 1rem;
+    width: 100%;
+}
+
+.new-btn:hover,
+.new-btn-guest:hover {
+    background-color: #e0a800;
+}
+
+.new-back-to-top {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background-color: #ffc107;
+    border-radius: 50%;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.new-back-to-top:hover {
+    background-color: #e0a800;
+}
+
+/* Style for the Forgot Password link */
+.new-forgot-password {
+    margin-top: 1rem;
+    display: block;
+    text-align: center;
+    color: #0d6efd;
+}
+
+.new-forgot-password:hover {
+    text-decoration: underline;
+}
+

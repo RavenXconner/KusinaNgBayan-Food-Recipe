@@ -1,0 +1,115 @@
+.new-section {
+    background-size: cover;
+    background-position: center;
+}
+
+.new-section-title {
+    font-size: 1.25rem;
+    text-transform: uppercase;
+}
+
+.new-text-primary {
+    color: #ffc107 !important;
+}
+
+.new-title {
+    margin-bottom: 3rem;
+}
+
+.ff-secondary {
+    font-family: 'Roboto', sans-serif;
+}
+
+.new-info-title {
+    font-size: 1.25rem;
+}
+
+.new-input,
+.new-textarea {
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    padding: 10px;
+}
+
+.new-btn {
+    background-color: #ffc107;
+    border: none;
+    border-radius: 4px;
+    padding: 10px 20px;
+    color: #fff;
+    transition: background-color 0.3s;
+}
+
+.new-btn:hover {
+    background-color: #e0a800;
+}
+
+.new-back-to-top {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background-color: #ffc107;
+    border-radius: 50%;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.new-back-to-top:hover {
+    background-color: #e0a800;
+}
+
+.new-text-center {
+    text-align: center;
+}
+
+.new-row,
+.new-col-md-6,
+.new-col-12 {
+    gap: 1rem;
+}
+
+.w-100 {
+    width: 100%;
+}
+
+.py-5 {
+    padding: 3rem 0;
+}
+
+.p-0 {
+    padding: 0;
+}
+
+.mb-5 {
+    margin-bottom: 3rem;
+}
+
+.d-flex {
+    display: flex;
+}
+
+.align-items-center {
+    align-items: center;
+}
+
+.justify-content-center {
+    justify-content: center;
+}
+
+.wow.fadeInUp {
+    animation-name: fadeInUp;
+    animation-duration: 1s;
+    animation-fill-mode: both;
+    visibility: visible !important;
+}
+
+@keyframes fadeInUp {
+    from {
+        transform: translate3d(0, 100%, 0);
+        opacity: 0;
+    }
+    to {
+        transform: translate3d(0, 0, 0);
+        opacity: 1;
+    }
+}
+

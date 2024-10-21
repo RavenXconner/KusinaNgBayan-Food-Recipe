@@ -20,13 +20,7 @@
   padding: 10px 0 !important;
 }
 
-/* Responsive Design for Smaller Screens */
-@media (max-width: 768px) {
-  .payment-content-wrapper {
-      width: 95%; /* Adjust for smaller screens */
-      padding: 15px;
-  }
-}
+
 
 /* Other Styles Remain Unchanged */
 .payment-header {

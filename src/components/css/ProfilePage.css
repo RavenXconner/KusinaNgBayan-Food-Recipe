@@ -165,10 +165,3 @@ footer {
     padding: 10px 0 !important;
 }
 
-/* Responsive adjustments */
-@media (max-width: 768px) {
-    .custom-container {
-        width: 95%;
-        padding: 15px;
-    }
-}

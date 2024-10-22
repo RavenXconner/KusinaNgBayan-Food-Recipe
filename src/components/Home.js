@@ -26,9 +26,7 @@ const Home = () => {
                   meals to delightful desserts, experience the warmth and
                   comfort of our kitchen, where every bite feels like home.
                 </p>
-                <Link to="/signup" className="btn btn-primary py-2 px-4">
-                  Sign up
-                </Link>
+                
               </div>
               <div className="col-lg-6 text-center text-lg-end overflow-hidden">
               <img className="img-fluid" src={newHeroImage} alt="Hero" />

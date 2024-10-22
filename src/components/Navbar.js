@@ -36,7 +36,7 @@ const Navbar = ({ loggedIn }) => {
           <Link to="/menu" className="nav-item nav-link">Menu</Link>
           <Link to="/contact" className="nav-item nav-link">Contact</Link>
           <div className="nav-item dropdown">
-            <Link to="#" className="nav-link dropdown-toggle" data-bs-toggle="dropdown">Pages</Link>
+            <Link to="#" className="nav-link dropdown-toggle" data-bs-toggle="dropdown">More</Link>
             <div className="dropdown-menu m-0">
               <span className="dropdown-item" onClick={handleProfileClick}>Profile</span>
               <Link to="/team" className="dropdown-item">Our Team</Link>

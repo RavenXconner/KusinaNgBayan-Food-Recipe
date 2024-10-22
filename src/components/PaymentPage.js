@@ -1,8 +1,8 @@
 import React, { useState } from "react";
-import "bootstrap/dist/css/bootstrap.min.css";
-import "./css/PaymentPage.css"; // Custom CSS for Payment Page
-import Footer from "./FooterPage"; // Import Footer
 import { Link, useNavigate } from "react-router-dom";
+import "bootstrap/dist/css/bootstrap.min.css";
+import "./css/PaymentPage.css";
+import Footer from "./FooterPage";
 import paymentCard from "./img/payment-logo/atm-card.png";
 import paymentGcash from "./img/payment-logo/gcash-seeklogo.png";
 import paymentPaypal from "./img/payment-logo/paypal.png";
@@ -17,14 +17,10 @@ const PaymentPage = () => {
   const applyVoucher = () => {
     if (voucher === "FREE3DAYS") {
       setVoucherApplied(true);
-      setError(""); // Clear any previous error
+      setError("");
     } else {
       setError("Invalid voucher code.");
     }
-  };
-
-  const handlePaymentMethod = (method) => {
-    navigate(`/${method}`); // Redirect to the payment form page
   };
 
   return (
@@ -45,9 +41,7 @@ const PaymentPage = () => {
 
       <div className="payment-plan-options d-flex justify-content-center gap-4 mb-5">
         <div
-          className={`payment-plan-card ${
-            plan === "monthly" ? "active-plan" : ""
-          }`}
+          className={`payment-plan-card ${plan === "monthly" ? "active-plan" : ""}`}
           onClick={() => setPlan("monthly")}
         >
           <h2>Monthly Plan</h2>
@@ -55,9 +49,7 @@ const PaymentPage = () => {
         </div>
 
         <div
-          className={`payment-plan-card ${
-            plan === "annual" ? "active-plan" : ""
-          }`}
+          className={`payment-plan-card ${plan === "annual" ? "active-plan" : ""}`}
           onClick={() => setPlan("annual")}
         >
           <h2>Annual Plan</h2>
@@ -87,27 +79,30 @@ const PaymentPage = () => {
       <div className="payment-methods-header text-center">
         <h3>Select Payment Method</h3>
         <div className="payment-method-icons d-flex justify-content-center gap-4">
-          <button onClick={() => handlePaymentMethod("paypal")}>
+          {/* Use Link for Navigation */}
+          <Link to="/maintenance" className="payment-icon-link">
             <img src={paymentPaypal} alt="PayPal" className="payment-icon" />
-          </button>
-          <button onClick={() => handlePaymentMethod("card")}>
+          </Link>
+
+          <Link to="/maintenance" className="payment-icon-link">
             <img src={paymentCard} alt="Credit Card" className="payment-icon" />
-          </button>
-          <button onClick={() => handlePaymentMethod("gcash")}>
-            <img src={paymentGcash} alt="GCash" className="payment-icon" />
-          </button>
+          </Link>
+
+          
         </div>
       </div>
+
       <Link
         to="#"
         className="new-back-to-top btn-lg btn-primary btn-lg-square"
         onClick={(e) => {
-          e.preventDefault(); // Prevent default anchor behavior
-          window.scrollTo({ top: 0, behavior: "smooth" }); // Scroll to the top smoothly
+          e.preventDefault();
+          window.scrollTo({ top: 0, behavior: "smooth" });
         }}
       >
         <i className="bi bi-arrow-up"></i>
       </Link>
+
       <Footer />
     </div>
   );

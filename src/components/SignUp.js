@@ -14,11 +14,35 @@ const SignupPage = () => {
   const [password, setPassword] = useState("");
   const [successMessage, setSuccessMessage] = useState(""); // State for success message
   const [errorMessage, setErrorMessage] = useState(""); // State for error message
+  const [isLoading, setIsLoading] = useState(false); // State for loading animation
   const navigate = useNavigate();
+
+  // Password validation function
+  const validatePassword = (password) => {
+    const uppercase = /[A-Z]/;
+    const lowercase = /[a-z]/;
+    const number = /[0-9]/;
+    const specialCharacter = /[!@#$%^&*(),.?":{}|<>]/;
+
+    return (
+      uppercase.test(password) &&
+      lowercase.test(password) &&
+      number.test(password) &&
+      specialCharacter.test(password)
+    );
+  };
 
   const handleSignup = async (e) => {
     e.preventDefault();
     setErrorMessage(""); // Clear any previous error message
+    setIsLoading(true); // Show loading animation
+
+    // Validate password before proceeding
+    if (!validatePassword(password)) {
+      setIsLoading(false); // Hide loading animation
+      setErrorMessage("Password must contain at least one uppercase letter, one lowercase letter, one number, and one special character.");
+      return;
+    }
 
     try {
       const userCredential = await createUserWithEmailAndPassword(auth, email, password);
@@ -32,14 +56,16 @@ const SignupPage = () => {
         dateJoined: new Date().toISOString(),
       });
 
-      // Set success message
+      // Set success message and hide loading animation
       setSuccessMessage("Account created successfully!");
+      setIsLoading(false);
 
-      // Navigate to the maintenance page after 2 seconds
+      // Navigate to the login page after 2 seconds
       setTimeout(() => {
-        navigate("/profile");
+        navigate("/login");
       }, 2000);
     } catch (error) {
+      setIsLoading(false); // Hide loading animation
       if (error.code === "auth/email-already-in-use") {
         setErrorMessage("This email is already in use. Please try logging in.");
       } else {
@@ -47,10 +73,8 @@ const SignupPage = () => {
       }
     }
   };
-
   return (
     <div className="new-container bg-white p-0">
-      
       <div className="new-container py-5 d-flex justify-content-center align-items-center">
         <div className="new-container text-center">
           <div className="new-text-center">
@@ -112,7 +136,9 @@ const SignupPage = () => {
                     />
                   </div>
                   <div className="new-col-12">
-                    <button className="new-btn w-100 py-3" type="submit">Sign Up</button>
+                    <button className="new-btn w-100 py-3" type="submit" disabled={isLoading}>
+                      {isLoading ? <div className="spinner-border text-light" role="status"></div> : "Sign Up"}
+                    </button>
                   </div>
                   <div className="new-col-12">
                     <p className="mt-3">Already have an account? <Link to="/login">Login</Link></p>

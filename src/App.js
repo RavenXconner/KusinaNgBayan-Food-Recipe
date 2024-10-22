@@ -15,9 +15,7 @@ import ProfilePage from "./components/ProfilePage";
 import EmptyUserPage from "./components/EmptyUser";
 import ScrollToTop from "./components/ScrollToTop";
 import PaymentPage from "./components/PaymentPage";
-import PayPalForm from "./components/PayPalForm";
-import GCashForm from "./components/GCashForm";
-import CardForm from "./components/CardForm";
+
 
 function App() {
   const [loggedIn, setLoggedIn] = useState(() => {
@@ -55,9 +53,6 @@ function App() {
           <Route path="/profile" element={<ProfilePage onLogout={handleLogout} />} />
           <Route path="/empty-user" element={<EmptyUserPage />} />
           <Route path="/payment" element={<PaymentPage />} />
-          <Route path="/paypal" element={<PayPalForm />} />
-          <Route path="/gcash" element={<GCashForm />} />
-          <Route path="/card" element={<CardForm />} />
         </Routes>
       </div>
     </Router>

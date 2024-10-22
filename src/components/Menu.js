@@ -189,8 +189,7 @@ const MenuPage = () => {
       </div>
       {/* Menu End */}
 
-      {/* Footer Component */}
-      <Footer /> {/* Add Footer component here */}
+      
 
       {/* Back to Top */}
       <Link
@@ -203,6 +202,8 @@ const MenuPage = () => {
       >
         <i className="bi bi-arrow-up"></i>
       </Link>
+      {/* Footer Component */}
+      <Footer /> {/* Add Footer component here */}
     </div>
   );
 };

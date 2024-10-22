@@ -1,15 +1,12 @@
 import React from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "./css/Contact.css"; // Custom styles
-import { Link } from "react-router-dom"; // Import Link from react-router-dom
-import Footer from "./FooterPage"; // Import the Footer component
+import { Link } from "react-router-dom";
+import Footer from "./FooterPage"; // Footer component
 
 const ContactPage = () => {
   return (
     <div className="new-container bg-white p-0">
-      {/* Navbar Component */}
-      
-
       {/* Contact Form Section */}
       <div className="new-container py-5 d-flex justify-content-center align-items-center">
         <div className="new-container text-center">
@@ -20,6 +17,7 @@ const ContactPage = () => {
             <h1 className="new-title">Contact For Any Query</h1>
           </div>
           <div className="new-row justify-content-center">
+            {/* Contact Info */}
             <div className="new-col-md-6">
               <div className="wow fadeInUp" data-wow-delay="0.2s">
                 <h5 className="new-info-title">Contact Info</h5>
@@ -31,15 +29,18 @@ const ContactPage = () => {
                   <i className="fa fa-phone-alt me-3"></i>+012 345 6789
                 </p>
                 <p>
-                  <i className="fa fa-envelope me-3"></i>Kusinangbayan@gmail.com
+                  <i className="fa fa-envelope me-3"></i>
+                  Kusinangbayan@gmail.com
                 </p>
               </div>
             </div>
+
+            {/* Contact Form */}
             <div className="new-col-md-6">
               <div className="wow fadeInUp" data-wow-delay="0.3s">
-                <form>
+                <form onSubmit={(e) => e.preventDefault()}>
                   <div className="new-row">
-                    <div className="new-col-12">
+                    <div className="new-col-12 mb-3">
                       <input
                         type="text"
                         className="new-input w-100"
@@ -47,7 +48,7 @@ const ContactPage = () => {
                         required
                       />
                     </div>
-                    <div className="new-col-12">
+                    <div className="new-col-12 mb-3">
                       <input
                         type="email"
                         className="new-input w-100"
@@ -55,7 +56,7 @@ const ContactPage = () => {
                         required
                       />
                     </div>
-                    <div className="new-col-12">
+                    <div className="new-col-12 mb-3">
                       <input
                         type="text"
                         className="new-input w-100"
@@ -63,7 +64,7 @@ const ContactPage = () => {
                         required
                       />
                     </div>
-                    <div className="new-col-12">
+                    <div className="new-col-12 mb-3">
                       <textarea
                         className="new-textarea w-100"
                         rows="4"
@@ -84,13 +85,14 @@ const ContactPage = () => {
         </div>
       </div>
 
-      {/* Back to Top */}
+      {/* Back to Top Button */}
       <Link
         to="#"
+        aria-label="Back to Top"
         className="new-back-to-top btn-lg btn-primary btn-lg-square"
         onClick={(e) => {
           e.preventDefault(); // Prevent default anchor behavior
-          window.scrollTo({ top: 0, behavior: "smooth" }); // Scroll to the top smoothly
+          window.scrollTo({ top: 0, behavior: "smooth" }); // Smooth scroll to top
         }}
       >
         <i className="bi bi-arrow-up"></i>

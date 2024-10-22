@@ -3,21 +3,19 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import "font-awesome/css/font-awesome.min.css";
 import { Link } from "react-router-dom";
 import Footer from "./FooterPage";
-import newHeroImage from "./img/hero-replacement.png";
+import newHeroImage from "./img/hero-replacement.png"; // Ensure the path is correct
 
 const Home = () => {
   return (
     <div className="container-xxl bg-white p-0">
-      {/*Hero Start */}
+      {/* Hero Section */}
       <div className="container-xxl position-relative p-0">
         <div className="container-xxl py-5 bg-dark hero-header mb-5">
           <div className="container my-5 py-5">
             <div className="row align-items-center g-5">
               <div className="col-lg-6 text-center text-lg-start">
                 <h1 className="display-3 text-white animated slideInLeft">
-                  Savor the
-                  <br />
-                  Flavors of Home
+                  Savor the <br /> Flavors of Home
                 </h1>
                 <p className="text-white animated slideInLeft mb-4 pb-2">
                   At Kusina ng Bayan, we bring you the rich and authentic taste
@@ -26,56 +24,50 @@ const Home = () => {
                   meals to delightful desserts, experience the warmth and
                   comfort of our kitchen, where every bite feels like home.
                 </p>
-                
+                <Link className="btn btn-primary py-3 px-5 mt-2" to="/menu">
+                  Explore Our Menu
+                </Link>
               </div>
               <div className="col-lg-6 text-center text-lg-end overflow-hidden">
-              <img className="img-fluid" src={newHeroImage} alt="Hero" />
+                <img
+                  className="img-fluid"
+                  src={newHeroImage}
+                  alt="Hero"
+                  loading="lazy"
+                />
               </div>
             </div>
           </div>
         </div>
       </div>
-      {/* Navbar & Hero End */}
 
-      {/* About Start */}
+      {/* About Section */}
       <div className="container-xxl py-5">
         <div className="container">
           <div className="row g-5 align-items-center">
             <div className="col-lg-6">
               <div className="row g-3">
-                <div className="col-6 text-start">
-                  <img
-                    className="img-fluid rounded w-100 wow zoomIn"
-                    data-wow-delay="0.1s"
-                    src="img/about-1.jpg"
-                    alt="About 1"
-                  />
-                </div>
-                <div className="col-6 text-start">
-                  <img
-                    className="img-fluid rounded w-75 wow zoomIn"
-                    data-wow-delay="0.3s"
-                    src="img/about-2.jpg"
-                    style={{ marginTop: "25%" }}
-                    alt="About 2"
-                  />
-                </div>
-                <div className="col-6 text-end">
-                  <img
-                    className="img-fluid rounded w-75 wow zoomIn"
-                    data-wow-delay="0.5s"
-                    src="img/about-3.jpg"
-                    alt="About 3"
-                  />
-                </div>
-                <div className="col-6 text-end">
-                  <img
-                    className="img-fluid rounded w-100 wow zoomIn"
-                    data-wow-delay="0.7s"
-                    src="img/about-4.jpg"
-                    alt="About 4"
-                  />
-                </div>
+                {["about-1", "about-2", "about-3", "about-4"].map(
+                  (imgName, index) => (
+                    <div
+                      key={index}
+                      className={`col-${index % 2 === 0 ? "6" : "6"} ${
+                        index % 2 === 0 ? "text-start" : "text-end"
+                      }`}
+                    >
+                      <img
+                        className={`img-fluid rounded ${
+                          index % 2 === 0 ? "w-100" : "w-75"
+                        } wow zoomIn`}
+                        data-wow-delay={`${0.1 * (index + 1)}s`}
+                        src={`img/${imgName}.jpg`}
+                        alt={`About ${index + 1}`}
+                        loading="lazy"
+                        style={index === 1 ? { marginTop: "25%" } : {}}
+                      />
+                    </div>
+                  )
+                )}
               </div>
             </div>
             <div className="col-lg-6">
@@ -83,53 +75,43 @@ const Home = () => {
                 About Us
               </h5>
               <h1 className="mb-4">
-                Welcome to <i className="fa fa-utensils text-primary me-2"></i>
-                Kusina Ng Bayan
+                Welcome to{" "}
+                <i className="fa fa-utensils text-primary me-2"></i> Kusina Ng
+                Bayan
               </h1>
               <p className="mb-4">
                 At Kusina ng Bayan, we are dedicated to sharing the authentic
                 flavors and traditions of Filipino cuisine. Our mission is to
                 bring people together through the love of food, serving up
-                dishes that remind you of home. Whether you're here for a hearty
-                meal or to explore new favorites, we make sure each plate
-                reflects the heart and soul of the Philippines.
+                dishes that remind you of home.
               </p>
               <p className="mb-4">
-                With 3 years of culinary expertise, we take pride in offering
-                over 50 popular Filipino dishes, carefully crafted to satisfy
-                your cravings for both classic and modern Filipino food. Join us
-                for a flavorful journey that celebrates tradition, community,
-                and the joy of eating together.
+                With 3 years of culinary expertise, we offer over 50 popular
+                Filipino dishes. Join us for a flavorful journey that celebrates
+                tradition, community, and the joy of eating together.
               </p>
               <div className="row g-4 mb-4">
-                <div className="col-sm-6">
-                  <div className="d-flex align-items-center border-start border-5 border-primary px-3">
-                    <h1
-                      className="flex-shrink-0 display-5 text-primary mb-0"
-                      data-toggle="counter-up"
-                    >
-                      3
-                    </h1>
-                    <div className="ps-4">
-                      <p className="mb-0">Years of</p>
-                      <h6 className="text-uppercase mb-0">Experience</h6>
+                {[
+                  { number: 3, label: "Years of Experience" },
+                  { number: 50, label: "Popular Filipino Dishes" },
+                ].map((item, index) => (
+                  <div key={index} className="col-sm-6">
+                    <div className="d-flex align-items-center border-start border-5 border-primary px-3">
+                      <h1
+                        className="flex-shrink-0 display-5 text-primary mb-0"
+                        data-toggle="counter-up"
+                      >
+                        {item.number}
+                      </h1>
+                      <div className="ps-4">
+                        <p className="mb-0">
+                          {index === 0 ? "Years of" : "Popular"}
+                        </p>
+                        <h6 className="text-uppercase mb-0">{item.label}</h6>
+                      </div>
                     </div>
                   </div>
-                </div>
-                <div className="col-sm-6">
-                  <div className="d-flex align-items-center border-start border-5 border-primary px-3">
-                    <h1
-                      className="flex-shrink-0 display-5 text-primary mb-0"
-                      data-toggle="counter-up"
-                    >
-                      50
-                    </h1>
-                    <div className="ps-4">
-                      <p className="mb-0">Popular</p>
-                      <h6 className="text-uppercase mb-0">Filipino Dish</h6>
-                    </div>
-                  </div>
-                </div>
+                ))}
               </div>
               <Link className="btn btn-primary py-3 px-5 mt-2" to="/about">
                 Read More
@@ -138,18 +120,21 @@ const Home = () => {
           </div>
         </div>
       </div>
-      {/* About End */}
+
+      {/* Back to Top Button */}
       <Link
         to="#"
+        aria-label="Back to Top"
         className="new-back-to-top btn-lg btn-primary btn-lg-square"
         onClick={(e) => {
-          e.preventDefault(); // Prevent default anchor behavior
-          window.scrollTo({ top: 0, behavior: "smooth" }); // Scroll to the top smoothly
+          e.preventDefault();
+          window.scrollTo({ top: 0, behavior: "smooth" });
         }}
       >
         <i className="bi bi-arrow-up"></i>
       </Link>
 
+      {/* Footer */}
       <Footer />
     </div>
   );

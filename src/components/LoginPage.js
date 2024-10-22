@@ -1,25 +1,30 @@
 import React, { useState } from "react";
 import { useNavigate, Link } from "react-router-dom";
 import { signInWithEmailAndPassword } from "firebase/auth";
-import { auth } from "./firebase/firebase"; // Import Firebase
+import { auth } from "./firebase/firebase";
 import Footer from "./FooterPage";
-import "./css/Login.css";
+import "./css/Login.css"; // Assuming styles are defined in Login.css
 
 const LoginPage = ({ onLogin }) => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-  const [errorMessage, setErrorMessage] = useState(""); // State to display login error messages
+  const [errorMessage, setErrorMessage] = useState("");
+  const [loading, setLoading] = useState(false); // Track loading state
   const navigate = useNavigate();
 
   const handleLogin = async (e) => {
     e.preventDefault();
+    setLoading(true); // Start loading animation
+
     try {
       await signInWithEmailAndPassword(auth, email, password);
-      onLogin(); // Call onLogin to update the loggedIn state in the parent component
-      navigate("/profile"); // Redirect to profile page on successful login
+      onLogin(); // Update loggedIn state
+      navigate("/profile"); // Redirect on success
     } catch (error) {
       console.error("Error logging in:", error.message);
       setErrorMessage("Failed to login. Please check your email and password.");
+    } finally {
+      setLoading(false); // Stop loading animation
     }
   };
 
@@ -43,6 +48,7 @@ const LoginPage = ({ onLogin }) => {
                       value={email}
                       onChange={(e) => setEmail(e.target.value)}
                       required
+                      aria-label="Email"
                     />
                   </div>
                   <div className="new-col-12">
@@ -53,16 +59,25 @@ const LoginPage = ({ onLogin }) => {
                       value={password}
                       onChange={(e) => setPassword(e.target.value)}
                       required
+                      aria-label="Password"
                     />
                   </div>
                   <div className="new-col-12">
-                    <button className="new-btn w-100 py-3" type="submit">
-                      Login
+                    <button
+                      className="new-btn w-100 py-3"
+                      type="submit"
+                      disabled={loading} // Disable button while loading
+                    >
+                      {loading ? (
+                        <span className="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span>
+                      ) : (
+                        "Login"
+                      )}
                     </button>
                   </div>
                   {errorMessage && (
                     <div className="new-col-12 mt-2">
-                      <p className="text-danger">{errorMessage}</p> {/* Display error message */}
+                      <p className="text-danger" role="alert">{errorMessage}</p>
                     </div>
                   )}
                   <div className="new-col-12">

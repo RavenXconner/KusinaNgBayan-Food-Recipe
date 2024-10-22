@@ -1,16 +1,15 @@
 import React from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "font-awesome/css/font-awesome.min.css";
-import { Link } from "react-router-dom"; // Add Link from react-router-dom
-import Footer from "./FooterPage"; // Adjust the path based on your folder structure
+import "bootstrap-icons/font/bootstrap-icons.css"; // Import Bootstrap Icons
+import { Link } from "react-router-dom";
+import Footer from "./FooterPage"; // Ensure path is correct
 
 const Home = () => {
   return (
     <div className="container-xxl bg-white p-0">
-     
       <div className="container-xxl position-relative p-0">
         {/* Navbar Component */}
-
         <div className="container-xxl py-5 bg-dark hero-header mb-5">
           <div className="container text-center my-5 pt-5 pb-4">
             <h1 className="display-3 text-white mb-3 animated slideInDown">
@@ -21,10 +20,7 @@ const Home = () => {
                 <li className="breadcrumb-item">
                   <Link to="/">Home</Link>
                 </li>
-                <li
-                  className="breadcrumb-item text-white active"
-                  aria-current="page"
-                >
+                <li className="breadcrumb-item text-white active" aria-current="page">
                   About
                 </li>
               </ol>
@@ -32,8 +28,8 @@ const Home = () => {
           </div>
         </div>
       </div>
-      {/* Navbar & Hero End */}
-      {/* About Start */}
+
+      {/* About Section */}
       <div className="container-xxl py-5">
         <div className="container">
           <div className="row g-5 align-items-center">
@@ -79,33 +75,23 @@ const Home = () => {
                 About Us
               </h5>
               <h1 className="mb-4">
-                Welcome to <i className="fa fa-utensils text-primary me-2"></i>
-                Kusina Ng Bayan
+                Welcome to <i className="fa fa-utensils text-primary me-2"></i>Kusina Ng Bayan
               </h1>
               <p className="mb-4">
                 At Kusina ng Bayan, we are dedicated to sharing the authentic
                 flavors and traditions of Filipino cuisine. Our mission is to
                 bring people together through the love of food, serving up
-                dishes that remind you of home. Whether you're here for a hearty
-                meal or to explore new favorites, we make sure each plate
-                reflects the heart and soul of the Philippines.
+                dishes that remind you of home.
               </p>
               <p className="mb-4">
                 With 3 years of culinary expertise, we take pride in offering
-                over 50 popular Filipino dishes, carefully crafted to satisfy
-                your cravings for both classic and modern Filipino food. Join us
-                for a flavorful journey that celebrates tradition, community,
-                and the joy of eating together.
+                over 50 popular Filipino dishes. Join us for a flavorful journey
+                that celebrates tradition, community, and the joy of eating together.
               </p>
               <div className="row g-4 mb-4">
                 <div className="col-sm-6">
                   <div className="d-flex align-items-center border-start border-5 border-primary px-3">
-                    <h1
-                      className="flex-shrink-0 display-5 text-primary mb-0"
-                      data-toggle="counter-up"
-                    >
-                      3
-                    </h1>
+                    <h1 className="flex-shrink-0 display-5 text-primary mb-0">3</h1>
                     <div className="ps-4">
                       <p className="mb-0">Years of</p>
                       <h6 className="text-uppercase mb-0">Experience</h6>
@@ -114,15 +100,10 @@ const Home = () => {
                 </div>
                 <div className="col-sm-6">
                   <div className="d-flex align-items-center border-start border-5 border-primary px-3">
-                    <h1
-                      className="flex-shrink-0 display-5 text-primary mb-0"
-                      data-toggle="counter-up"
-                    >
-                      50
-                    </h1>
+                    <h1 className="flex-shrink-0 display-5 text-primary mb-0">50</h1>
                     <div className="ps-4">
                       <p className="mb-0">Popular</p>
-                      <h6 className="text-uppercase mb-0">Filipino Dish</h6>
+                      <h6 className="text-uppercase mb-0">Filipino Dishes</h6>
                     </div>
                   </div>
                 </div>
@@ -134,20 +115,21 @@ const Home = () => {
           </div>
         </div>
       </div>
-      {/* About End */}
-      {/* Back to Top */}
+
+      {/* Back to Top Button */}
       <Link
         to="#"
         className="new-back-to-top btn-lg btn-primary btn-lg-square"
         onClick={(e) => {
           e.preventDefault(); // Prevent default anchor behavior
-          window.scrollTo({ top: 0, behavior: "smooth" }); // Scroll to the top smoothly
+          window.scrollTo({ top: 0, behavior: "smooth" }); // Scroll to top smoothly
         }}
       >
         <i className="bi bi-arrow-up"></i>
       </Link>
+
       {/* Footer Component */}
-      <Footer /> {/* Add Footer component here */}
+      <Footer />
     </div>
   );
 };

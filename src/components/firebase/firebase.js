@@ -1,7 +1,9 @@
+// src/components/firebase/firebase.js
+
 import { initializeApp } from "firebase/app";
 import { getAuth, setPersistence, browserLocalPersistence } from "firebase/auth"; 
 import { getDatabase } from "firebase/database";
-import { getAnalytics } from "firebase/analytics";
+import { getAnalytics, logEvent } from "firebase/analytics";
 
 const firebaseConfig = {
   apiKey: process.env.REACT_APP_FIREBASE_API_KEY,
@@ -14,10 +16,12 @@ const firebaseConfig = {
   databaseURL: process.env.REACT_APP_FIREBASE_DATABASE_URL,
 };
 
-
 // Initialize Firebase
 const app = initializeApp(firebaseConfig);
+
+// Initialize Analytics
 const analytics = getAnalytics(app);
+logEvent(analytics, 'notification_received'); // Example use of analytics
 
 // Initialize Auth and Database
 const auth = getAuth(app);

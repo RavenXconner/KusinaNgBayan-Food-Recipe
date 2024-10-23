@@ -15,6 +15,8 @@ import ProfilePage from "./components/ProfilePage";
 import EmptyUserPage from "./components/EmptyUser";
 import ScrollToTop from "./components/ScrollToTop";
 import PaymentPage from "./components/PaymentPage";
+import Footer from "./components/FooterPage";
+
 
 
 function App() {
@@ -54,6 +56,7 @@ function App() {
           <Route path="/empty-user" element={<EmptyUserPage />} />
           <Route path="/payment" element={<PaymentPage />} />
         </Routes>
+        <Footer />
       </div>
     </Router>
   );

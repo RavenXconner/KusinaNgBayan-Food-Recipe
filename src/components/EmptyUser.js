@@ -1,6 +1,5 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
-import Footer from "./FooterPage"; // Reuse the same Footer component
 import "./css/ProfilePage.css"; // Reuse ProfilePage styles for consistency
 
 const EmptyUser = () => {
@@ -30,7 +29,7 @@ const EmptyUser = () => {
         </button>
       </div>
 
-      <Footer />
+      
     </div>
   );
 };

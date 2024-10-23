@@ -1,7 +1,7 @@
 // src/TeamPage.js
 import React from "react";
 import { Link } from "react-router-dom"; // Add this line
-import Footer from "./FooterPage"; // Adjust the path as necessary
+
 import teamMember1 from "./img/Profiles/Villarta.png";
 import teamMember2 from "./img/Profiles/Javy-Rodillon.png";
 import teamMember3 from "./img/Profiles/JAMAICA PATAC.png";
@@ -308,9 +308,6 @@ const TeamPage = () => {
         </div>
       </div>
       {/* Team End */}
-
-      {/* Footer Component */}
-      <Footer />
 
       {/* Back to Top */}
       <Link

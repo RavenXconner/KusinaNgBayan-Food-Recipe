@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom'; // Import Link for routing
 import './css/Maintenance.css'; // Import CSS
-import Footer from './FooterPage'; // Import the Footer component
+
 
 const MaintenancePage = () => {
   return (
@@ -22,8 +22,7 @@ const MaintenancePage = () => {
           </div>
         </section>
       </div>
-      {/* Footer Component */}
-      <Footer />
+      
     </>
   );
 };

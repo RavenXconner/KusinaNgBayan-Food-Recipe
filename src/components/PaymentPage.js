@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "./css/PaymentPage.css";
-import Footer from "./FooterPage";
+
 import paymentCard from "./img/payment-logo/atm-card.png";
 import paymentPaypal from "./img/payment-logo/paypal.png";
 
@@ -111,7 +111,7 @@ const PaymentPage = () => {
         <i className="bi bi-arrow-up"></i>
       </Link>
 
-      <Footer />
+  
     </div>
   );
 };

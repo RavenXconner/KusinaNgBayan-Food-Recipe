@@ -4,7 +4,6 @@ import { createUserWithEmailAndPassword } from "firebase/auth";
 import { ref, set } from "firebase/database";
 import { auth, database } from "./firebase/firebase";
 import { Link } from "react-router-dom";
-import Footer from "./FooterPage";
 import "./css/Signup.css";
 
 const SignupPage = () => {
@@ -149,7 +148,7 @@ const SignupPage = () => {
           </div>
         </div>
       </div>
-      <Footer />
+    
     </div>
   );
 };

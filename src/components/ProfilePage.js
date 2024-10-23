@@ -3,7 +3,7 @@ import { auth, database } from "./firebase/firebase";
 import { ref, onValue } from "firebase/database";
 import { signOut, onAuthStateChanged } from "firebase/auth";
 import { useNavigate } from "react-router-dom";
-import Footer from "./FooterPage";
+
 import "./css/ProfilePage.css";
 
 const ProfilePage = ({ onLogout }) => {
@@ -72,7 +72,7 @@ const ProfilePage = ({ onLogout }) => {
         </button>
       </div>
       
-      <Footer />
+    
     </div>
   );
 };

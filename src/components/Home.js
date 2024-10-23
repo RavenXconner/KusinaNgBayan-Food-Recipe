@@ -2,7 +2,6 @@ import React from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "font-awesome/css/font-awesome.min.css";
 import { Link } from "react-router-dom";
-import Footer from "./FooterPage";
 import newHeroImage from "./img/hero-replacement.png"; // Ensure the path is correct
 import about1 from "./img/about-1.jpg";
 import about2 from "./img/about-2.jpg";
@@ -138,8 +137,6 @@ const Home = () => {
         <i className="bi bi-arrow-up"></i>
       </Link>
 
-      {/* Footer */}
-      <Footer />
     </div>
   );
 };

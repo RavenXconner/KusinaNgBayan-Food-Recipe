@@ -2,7 +2,6 @@ import React, { useState } from "react";
 import { useNavigate, Link } from "react-router-dom";
 import { signInWithEmailAndPassword } from "firebase/auth";
 import { auth } from "./firebase/firebase";
-import Footer from "./FooterPage";
 import "./css/Login.css"; // Assuming styles are defined in Login.css
 
 const LoginPage = ({ onLogin }) => {
@@ -94,7 +93,7 @@ const LoginPage = ({ onLogin }) => {
           </div>
         </div>
       </div>
-      <Footer />
+     
     </div>
   );
 };

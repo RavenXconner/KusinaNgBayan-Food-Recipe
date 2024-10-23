@@ -2,7 +2,7 @@ import React from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "./css/Contact.css"; // Custom styles
 import { Link } from "react-router-dom";
-import Footer from "./FooterPage"; // Footer component
+
 
 const ContactPage = () => {
   return (
@@ -98,8 +98,7 @@ const ContactPage = () => {
         <i className="bi bi-arrow-up"></i>
       </Link>
 
-      {/* Footer Component */}
-      <Footer />
+     
     </div>
   );
 };

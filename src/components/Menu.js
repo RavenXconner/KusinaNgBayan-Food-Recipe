@@ -2,7 +2,7 @@ import React from "react";
 import { Link } from "react-router-dom";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "font-awesome/css/font-awesome.min.css";
-import Footer from "./FooterPage"; // Adjust the path based on your folder structure
+
 
 const MenuPage = () => {
   return (
@@ -202,8 +202,7 @@ const MenuPage = () => {
       >
         <i className="bi bi-arrow-up"></i>
       </Link>
-      {/* Footer Component */}
-      <Footer /> {/* Add Footer component here */}
+     
     </div>
   );
 };

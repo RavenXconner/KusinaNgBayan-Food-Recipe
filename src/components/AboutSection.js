@@ -3,7 +3,7 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import "font-awesome/css/font-awesome.min.css";
 import "bootstrap-icons/font/bootstrap-icons.css"; // Import Bootstrap Icons
 import { Link } from "react-router-dom";
-import Footer from "./FooterPage"; // Ensure path is correct
+
 
 const Home = () => {
   return (
@@ -128,8 +128,7 @@ const Home = () => {
         <i className="bi bi-arrow-up"></i>
       </Link>
 
-      {/* Footer Component */}
-      <Footer />
+      
     </div>
   );
 };

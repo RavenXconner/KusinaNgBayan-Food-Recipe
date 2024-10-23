@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { sendPasswordResetEmail } from "firebase/auth";
 import { auth } from "./firebase/firebase"; // Import Firebase
 import { Link } from "react-router-dom"; // Add this line
-import Footer from "./FooterPage";
+
 import "./css/ForgotPassword.css";
 
 const ForgotPasswordPage = () => {
@@ -54,7 +54,7 @@ const ForgotPasswordPage = () => {
           </div>
         </div>
       </div>
-      <Footer />
+     
     </div>
   );
 };

@@ -20,8 +20,6 @@
   padding: 10px 0 !important;
 }
 
-
-
 /* Other Styles Remain Unchanged */
 .payment-header {
   background-color: #ffc107;
@@ -51,6 +49,11 @@
   background-color: #ffc107;
   color: white;
   transform: scale(1.05);
+}
+
+/* Ensure Compatibility with Latest CSS Changes */
+.payment-plan-card {
+  print-color-adjust: exact; /* Replaced deprecated color-adjust */
 }
 
 .voucher-section {

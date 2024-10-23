@@ -11,7 +11,7 @@ const PaymentPage = () => {
   const [voucher, setVoucher] = useState("");
   const [error, setError] = useState("");
   const [voucherApplied, setVoucherApplied] = useState(false);
-  const navigate = useNavigate();
+  const navigate = useNavigate(); // Fix: Use navigate to remove unused variable warning
 
   const applyVoucher = () => {
     if (voucher === "FREE3DAYS") {
@@ -20,6 +20,11 @@ const PaymentPage = () => {
     } else {
       setError("Invalid voucher code.");
     }
+  };
+
+  const handlePayment = (method) => {
+    // Redirect the user to a placeholder page or actual payment logic
+    navigate("/maintenance", { state: { method, plan } });
   };
 
   return (
@@ -78,16 +83,20 @@ const PaymentPage = () => {
       <div className="payment-methods-header text-center">
         <h3>Select Payment Method</h3>
         <div className="payment-method-icons d-flex justify-content-center gap-4">
-          {/* Use Link for Navigation */}
-          <Link to="/maintenance" className="payment-icon-link">
+          {/* Use onClick to call handlePayment with the chosen method */}
+          <button
+            className="payment-icon-link"
+            onClick={() => handlePayment("paypal")}
+          >
             <img src={paymentPaypal} alt="PayPal" className="payment-icon" />
-          </Link>
+          </button>
 
-          <Link to="/maintenance" className="payment-icon-link">
+          <button
+            className="payment-icon-link"
+            onClick={() => handlePayment("card")}
+          >
             <img src={paymentCard} alt="Credit Card" className="payment-icon" />
-          </Link>
-
-          
+          </button>
         </div>
       </div>
 

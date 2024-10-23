@@ -4,8 +4,14 @@ import "font-awesome/css/font-awesome.min.css";
 import { Link } from "react-router-dom";
 import Footer from "./FooterPage";
 import newHeroImage from "./img/hero-replacement.png"; // Ensure the path is correct
+import about1 from "./img/about-1.jpg";
+import about2 from "./img/about-2.jpg";
+import about3 from "./img/about-3.jpg";
+import about4 from "./img/about-4.jpg";
 
 const Home = () => {
+  const aboutImages = [about1, about2, about3, about4];
+
   return (
     <div className="container-xxl bg-white p-0">
       {/* Hero Section */}
@@ -47,27 +53,25 @@ const Home = () => {
           <div className="row g-5 align-items-center">
             <div className="col-lg-6">
               <div className="row g-3">
-                {["about-1", "about-2", "about-3", "about-4"].map(
-                  (imgName, index) => (
-                    <div
-                      key={index}
-                      className={`col-${index % 2 === 0 ? "6" : "6"} ${
-                        index % 2 === 0 ? "text-start" : "text-end"
-                      }`}
-                    >
-                      <img
-                        className={`img-fluid rounded ${
-                          index % 2 === 0 ? "w-100" : "w-75"
-                        } wow zoomIn`}
-                        data-wow-delay={`${0.1 * (index + 1)}s`}
-                        src={`img/${imgName}.jpg`}
-                        alt={`About ${index + 1}`}
-                        loading="lazy"
-                        style={index === 1 ? { marginTop: "25%" } : {}}
-                      />
-                    </div>
-                  )
-                )}
+                {aboutImages.map((img, index) => (
+                  <div
+                    key={index}
+                    className={`col-${index % 2 === 0 ? "6" : "6"} ${
+                      index % 2 === 0 ? "text-start" : "text-end"
+                    }`}
+                  >
+                    <img
+                      className={`img-fluid rounded ${
+                        index % 2 === 0 ? "w-100" : "w-75"
+                      } wow zoomIn`}
+                      data-wow-delay={`${0.1 * (index + 1)}s`}
+                      src={img}
+                      alt={`About ${index + 1}`}
+                      loading="lazy"
+                      style={index === 1 ? { marginTop: "25%" } : {}}
+                    />
+                  </div>
+                ))}
               </div>
             </div>
             <div className="col-lg-6">
